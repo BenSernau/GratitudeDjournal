@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form>
+	<button formaction="./newday/">New Entry</button>
+</form>
+<br>
+
+{% for instance in object_list %}
+	<h3>Good things that happened on {{ instance.today }}:</h3>
+	<ul>
+		<li type = "square">{{ instance.firstItem }}</li><br>
+		<li type = "square">{{ instance.secondItem }}</li><br>
+		<li type = "square">{{ instance.thirdItem }}</li>
+	</ul>
+	<form>
+		<button formaction="./delete/{{instance.id}}/">Delete</button>
+	</form><br>
+{% endfor %}
+{% endblock %}

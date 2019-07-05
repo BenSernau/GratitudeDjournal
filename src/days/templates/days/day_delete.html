@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action = '.' method = 'POST'>{% csrf_token %}
+	<p><b>You sure?</b>
+	<input type = 'submit' value = 'Yes' /> <input formaction = "http://localhost:8000/" type = 'submit' value = 'No' /></p>
+</form>
+
+{% endblock %}
